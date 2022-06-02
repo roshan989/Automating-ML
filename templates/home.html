@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% block more_css %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static',filename='styles/home.css') }}"
+/>
+{% endblock more_css %}
+{% block index %}
+<center>
+  <div class="datacard">
+    {% block home %} 
+    {% for table in tables %} {{ table|safe }} {% endfor %} 
+    {%endblock home %}
+    <form action="/learn" , method="post">
+      <button>Start ML</button>
+    </form>
+  </div>
+</center>
+{% endblock index %}

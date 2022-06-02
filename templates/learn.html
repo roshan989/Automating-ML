@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block more_css %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for('static',filename='styles/learn.css') }}"
+/>
+{% endblock more_css %} {% block index %}
+<!-- <h1>accuracy is {{accuracy}}</h1> -->
+<div class="grid-container">
+  {% for i,j in output %}
+
+  <div class="grid-item">
+    <img src="data:;base64,{{i}}"  />
+    <br>
+    <i>Accuracy - {{100-j}}</i>
+  </div>
+
+  {% endfor %}
+</div>
+{% endblock index %}
